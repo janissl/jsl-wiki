@@ -22,6 +22,18 @@ docker save -o ${filename}_image.tar ${repo_name}
 docker load -i ${filename}_image.tar
 ```
 
+#### View docker images
+
+```shell
+docker images
+```
+
+#### Remove docker image
+
+```shell
+docker image rm ${image_id}
+```
+
 #### Run docker container
 
 ```shell
@@ -40,16 +52,22 @@ docker ps
 docker stop ${container_id,custom_name}
 ```
 
-#### View docker images
+#### Restart a stopped container
 
 ```shell
-docker images
+docker restart ${container_id}
 ```
 
-#### Remove docker image
+#### Remove a container
 
 ```shell
-docker image rm ${image_id}
+docker rm ${container_id}
+```
+
+#### Remove all containers at once
+
+```shell
+docker rm $(docker ps -a -q)
 ```
 
 #### Access docker container
