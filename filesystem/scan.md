@@ -49,7 +49,7 @@ import java.nio.file.{DirectoryStream, Files, Paths}
 import scala.jdk.CollectionConverters.IterableHasAsScala
 import scala.util.Using
 
-def listFiles0(directory: String, acc: List[File]): List[File] = {
+def listFiles(directory: String, acc: List[File]): List[File] = {
   Using(Files.newDirectoryStream(Paths.get(directory))){ directoryStream =>
     directoryStream.asScala.flatMap(p =>
       if (p.toFile.isDirectory) listFiles0(p.toString, acc) ++ acc
@@ -57,4 +57,7 @@ def listFiles0(directory: String, acc: List[File]): List[File] = {
     ).toList
   }.getOrElse(List.empty[File])
 }
+
+val path = """C:\mydir"""
+listFiles(path, List.empty[File])
 ```
