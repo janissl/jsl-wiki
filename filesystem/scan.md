@@ -52,7 +52,7 @@ import scala.util.Using
 def listFiles(directory: String, acc: List[File]): List[File] = {
   Using(Files.newDirectoryStream(Paths.get(directory))){ directoryStream =>
     directoryStream.asScala.flatMap(p =>
-      if (p.toFile.isDirectory) listFiles0(p.toString, acc) ++ acc
+      if (p.toFile.isDirectory) listFiles(p.toString, acc) ++ acc
       else p.toFile :: acc
     ).toList
   }.getOrElse(List.empty[File])
