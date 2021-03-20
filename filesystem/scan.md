@@ -22,7 +22,7 @@ scan_dir(path)
 // up to Scala 2.12
 import java.io.File
 import java.nio.file.{DirectoryStream, Files, Paths}
-import scala.jdk.CollectionConverters.IterableHasAsScala
+import scala.collection.JavaConverters.iterableAsScalaIterableConverter
 
 
 def listFiles(directory: String, acc: List[File]): List[File] = {
