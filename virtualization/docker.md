@@ -67,7 +67,7 @@ docker rm ${container_id}
 #### Remove all containers at once
 
 ```shell
-docker rm $(docker ps -a -q)
+docker rm $(docker ps -aq)
 ```
 
 #### Access docker container
