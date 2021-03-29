@@ -128,7 +128,11 @@ To copy resource files/directories to _./target/pack_ folder, add the following 
 packResourceDir += (baseDirectory.value / "src/main/resources" -> "")
 ```
 
-#### Create a tar.gz archive of your Scala application package
+To create a tar.gz archive of your packed Scala application, execute the following command:
 ```shell
 [sbt] packArchive
 ```
+---
+References:
+1. [sbt Reference Manual](https://www.scala-sbt.org/1.x/docs/)
+1. [sbt-pack plugin](https://github.com/xerial/sbt-pack)
