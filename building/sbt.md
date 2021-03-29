@@ -1,6 +1,47 @@
 Build Scala executables using sbt
 =================================
 
+### The most common sbt commands
+
+#### Open sbt shell
+```shell
+sbt
+```
+
+#### Run Scala interpreter or REPL
+```shell
+[sbt] console
+```
+To close the Scala console, press Ctrl+D or type
+```shell
+:quit
+```
+
+#### Compile the main sources
+```shell
+[sbt] compile
+```
+
+#### Compile and run all tests
+```shell
+[sbt] test
+```
+
+#### Run the main class
+```shell
+[sbt] run <argument>*
+```
+
+#### Delete all generated files in target folder
+```shell
+[sbt] clean
+```
+
+#### Reload build definition after modification
+```shell
+reload
+```
+
 #### A minimal build.sbt example
 
 ```sbt
@@ -19,21 +60,15 @@ testOptions in Test += Tests.Argument(TestFrameworks.JUnit, "-a", "-v", "-s")
 
 #### Create a single JAR file without dependencies
 ```shell
-sbt package
+[sbt] package
 ```
 Creates a JAR file containing the files in _./src/main/resources_ and the classes compiled from _./src/main/scala_ and _./src/main/java_.
 
 Outputs a JAR to *./target/scala-{scalaVersion}}/{projectName}_{scalaVersion}-{projectVersion}.jar*.
 
-
-#### Delete all generated files
-```shell
-sbt clean
-```
-
 #### Create a single JAR file with dependencies (a fat JAR)
 ```shell
-sbt assembly
+[sbt] assembly
 ```
 Requires the __sbt-assembly__ plugin.
 
@@ -68,10 +103,9 @@ assemblyMergeStrategy in assembly := {
 }
 ```
 
-
 #### Create a single JAR file and download all dependencies as separate JARs
 ```shell
-sbt pack
+[sbt] pack
 ```
 Requires the __sbt-pack__ plugin.
 
@@ -91,5 +125,10 @@ enablePlugins(PackPlugin)
 
 To copy resource files/directories to _./target/pack_ folder, add the following line in __build.sbt__.
 ```shell
-packResourceDir += (baseDirectory.value / "src/main/resources/" -> "")
+packResourceDir += (baseDirectory.value / "src/main/resources" -> "")
+```
+
+#### Create a tar.gz archive of your Scala application package
+```shell
+[sbt] packArchive
 ```
