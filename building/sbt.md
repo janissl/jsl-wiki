@@ -1,7 +1,8 @@
 Build Scala executables using sbt
 =================================
 
-### The most common sbt commands
+The most common sbt commands
+----------------------------
 
 #### Open sbt shell
 ```shell
@@ -66,6 +67,8 @@ Creates a JAR file containing the files in _./src/main/resources_ and the classe
 
 Outputs a JAR to *./target/scala-{scalaVersion}}/{projectName}_{scalaVersion}-{projectVersion}.jar*.
 
+Using plugins to build JAR executables
+--------------------------------------
 #### Create a single JAR file with dependencies (a fat JAR)
 ```shell
 [sbt] assembly
@@ -103,7 +106,7 @@ assemblyMergeStrategy in assembly := {
 }
 ```
 
-#### Create a single JAR file and download all dependencies as separate JARs
+#### Create a single JAR file with no dependencies and download all dependencies as separate JARs
 ```shell
 [sbt] pack
 ```
@@ -128,10 +131,13 @@ To copy resource files/directories to _./target/pack_ folder, add the following 
 packResourceDir += (baseDirectory.value / "src/main/resources" -> "")
 ```
 
-To create a tar.gz archive of your packed Scala application, execute the following command:
+To also create a tar.gz and a zip archive of your Scala application, execute the following command:
 ```shell
 [sbt] packArchive
 ```
+
+**NOTE: For building Spark applications, only use AssemblyPlugin, otherwise your dependencies may not be found at runtime.**
+
 ---
 References:
 1. [sbt Reference Manual](https://www.scala-sbt.org/1.x/docs/)
