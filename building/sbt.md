@@ -136,7 +136,12 @@ To also create a tar.gz and a zip archive of your Scala application, execute the
 [sbt] packArchive
 ```
 
-**NOTE: For building Spark applications, only use AssemblyPlugin, otherwise your dependencies may not be found at runtime.**
+NOTES
+-----
+* For building Spark applications, only use AssemblyPlugin, otherwise your dependencies may not be found at runtime.
+* When building Spark application, the major and minor version of Scala must match the version with which your current Apache Spark installation has been built.
+  Otherwise, running the application will result in a ClassNotFoundException.
+  Both versions can be checked using spark-shell command.
 
 ---
 References:
