@@ -28,6 +28,13 @@ To close the Scala console, press Ctrl+D or type
 [sbt] test
 ```
 
+
+#### Only run failed or new tests
+```shell
+[sbt] testQuick
+```
+
+
 #### Run the main class
 ```shell
 [sbt] run <argument>*
