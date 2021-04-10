@@ -66,6 +66,25 @@ libraryDependencies ++= Seq(
 testOptions in Test += Tests.Argument(TestFrameworks.JUnit, "-a", "-v", "-s")
 ```
 
+A newer syntax:
+
+```sbt
+lazy val root = (project in file("."))
+  .settings(
+    name := "my-project",
+    version := "0.1",
+    scalaVersion := "2.12.13",
+
+    scalacOptions ++= Seq("-language:implicitConversions", "-deprecation"),
+
+    libraryDependencies ++= Seq(
+      "com.novocode" % "junit-interface" % "0.11" % Test
+    ),
+
+    Test / testOptions += Tests.Argument(TestFrameworks.JUnit, "-a", "-v", "-s")
+  )
+```
+
 #### Create a single JAR file without dependencies
 ```shell
 [sbt] package
@@ -92,6 +111,14 @@ addSbtPlugin("eed3si9n" % "sbt-assembly" % "0.15.0")
 Add the following line in the beginning of __build.sbt__.
 ```sbt
 enablePlugins(AssemblyPlugin)
+```
+
+OR
+
+```sbt
+lazy val root = (project in file("."))
+  .enablePlugins(AssemblyPlugin)
+  .settings(???)
 ```
 
 To exclude some dependencies, specify them as "provided" in __build.sbt__.
