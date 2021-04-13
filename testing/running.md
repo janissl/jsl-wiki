@@ -8,7 +8,7 @@ cd $project_dir
 python -m unittest discover -s tests
 ```
 
-#### Scala example (using sbt)
+#### Scala example (using ScalaTest and ScalaCheck with sbt)
 
 ```sbt
 // Add the lines below to your build.sbt file
