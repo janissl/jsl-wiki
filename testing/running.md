@@ -43,4 +43,5 @@ testQuick
 References:
 1. [Using ScalaTest with sbt](https://www.scalatest.org/user_guide/using_scalatest_with_sbt)
 1. [ScalaCheck: Property-based testing for Scala](https://www.scalacheck.org/)
+1. [ScalaTest - Quick start](https://www.scalatest.org/quick_start)
 1. [SBT - Testing](https://www.scala-sbt.org/1.x/docs/Testing.html)
