@@ -23,17 +23,6 @@ To close the Scala console, press Ctrl+D or type
 [sbt] compile
 ```
 
-#### Compile and run all tests
-```shell
-[sbt] test
-```
-
-
-#### Only run failed or new tests
-```shell
-[sbt] testQuick
-```
-
 
 #### Run the main class
 ```shell
@@ -45,29 +34,14 @@ To close the Scala console, press Ctrl+D or type
 [sbt] clean
 ```
 
+
 #### Reload build definition after modification
 ```shell
 reload
 ```
 
+
 #### A minimal build.sbt example
-
-```sbt
-name := "my-project"
-version := "0.1"
-
-scalaVersion := "2.12.13"
-scalacOptions ++= Seq("-language:implicitConversions", "-deprecation")
-
-libraryDependencies ++= Seq(
-  "com.novocode" % "junit-interface" % "0.11" % Test
-)
-
-testOptions in Test += Tests.Argument(TestFrameworks.JUnit, "-a", "-v", "-s")
-```
-
-A newer syntax:
-
 ```sbt
 lazy val root = (project in file("."))
   .settings(
@@ -75,13 +49,7 @@ lazy val root = (project in file("."))
     version := "0.1",
     scalaVersion := "2.12.13",
 
-    scalacOptions ++= Seq("-language:implicitConversions", "-deprecation"),
-
-    libraryDependencies ++= Seq(
-      "com.novocode" % "junit-interface" % "0.11" % Test
-    ),
-
-    Test / testOptions += Tests.Argument(TestFrameworks.JUnit, "-a", "-v", "-s")
+    scalacOptions ++= Seq("-language:implicitConversions", "-deprecation")
   )
 ```
 
