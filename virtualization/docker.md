@@ -76,3 +76,14 @@ docker rm $(docker ps -aq)
 docker exec -it ${container_id} bash
 ```
 
+#### Pass input from a file to a docker container
+
+Linux:
+```shell
+docker exec <arguments> < my/input/file
+```
+
+Windows (Powershell):
+```powershell
+Get-Content -Path .\my\input\file | docker exec <arguments>
+```
