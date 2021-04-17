@@ -49,7 +49,11 @@ lazy val root = (project in file("."))
     version := "0.1",
     scalaVersion := "2.12.13",
 
-    scalacOptions ++= Seq("-language:implicitConversions", "-deprecation")
+    scalacOptions ++= Seq(
+      "-language:implicitConversions", "-deprecation", "-unchecked",
+      "-encoding", "utf8",  // if you have "UTF-8" encoded literal strings in your source code
+      "-release", "8"  // if the compilation must be preformed for a specific Java version which differs from the current one
+    )
   )
 ```
 
@@ -76,13 +80,7 @@ Add the following line in the file _./project/plugins.sbt_ (check for the latest
 addSbtPlugin("eed3si9n" % "sbt-assembly" % "0.15.0")
 ```
 
-Add the following line in the beginning of __build.sbt__.
-```sbt
-enablePlugins(AssemblyPlugin)
-```
-
-OR
-
+Add _enablePlugins_ method in __build.sbt__.
 ```sbt
 lazy val root = (project in file("."))
   .enablePlugins(AssemblyPlugin)
