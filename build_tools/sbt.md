@@ -100,7 +100,7 @@ includeFilter in (Compile, unmanagedResourceDirectories) := ".dll,.so"
 
 Specify the merging strategy in __build.sbt__ (a simple example).
 ```sbt
-assemblyMergeStrategy in assembly := {
+assembly / assemblyMergeStrategy := {
   case PathList("META-INF", xs @ _*) => MergeStrategy.discard
   case x => MergeStrategy.first
 }
