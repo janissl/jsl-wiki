@@ -139,7 +139,7 @@ To also create a tar.gz and a zip archive of your Scala application, execute the
 NOTES
 -----
 * For building Spark applications, only use AssemblyPlugin if you have dependencies other than Spark and testing libraries.
-  Otherwise your dependencies may not be found at runtime.
+  Otherwise, your dependencies may not be found at runtime.
 * When building Spark application, the major and minor version of Scala must match the version with which your current Apache Spark installation has been built.
   Otherwise, running the application will result in a ClassNotFoundException.
   Both versions can be checked using spark-shell command.
