@@ -121,9 +121,11 @@ Add the following line in the file _./project/plugins.sbt_ (check for the latest
 addSbtPlugin("org.xerial.sbt" % "sbt-pack" % "0.13")
 ```
 
-Add the following line in the beginning of __build.sbt__.
+Enable the plugin in __build.sbt__ (in the same as with the assembly plugin - see above).
 ```sbt
-enablePlugins(PackPlugin)
+lazy val root = (project in file("."))
+        .enablePlugins(PackPlugin)
+        .settings(???)
 ```
 
 To copy resource files/directories to _./target/pack_ folder, add the following line in __build.sbt__.
