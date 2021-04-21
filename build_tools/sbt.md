@@ -52,7 +52,7 @@ lazy val root = (project in file("."))
     scalacOptions ++= Seq(
       "-language:implicitConversions", "-deprecation", "-unchecked",
       "-encoding", "utf8",  // if you have "UTF-8" encoded literal strings in your source code
-      "-release", "8"  // if the compilation must be preformed for a specific Java version which differs from the current one
+      "-target:jvm-1.6", // if the compilation must be performed for a specific Java version which differs from the default one
     )
   )
 ```
