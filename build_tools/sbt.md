@@ -94,8 +94,8 @@ libraryDependencies += "org.apache.spark" %% "spark-core" % "2.4.7" % "provided"
 
 To include also directories with unmanaged dependencies (like DLL, SO files), add the following lines in __build.sbt__.
 ```sbt
-unmanagedResourceDirectories in Compile += baseDirectory.value / "{directoryName}"
-includeFilter in (Compile, unmanagedResourceDirectories) := ".dll,.so"
+Compile / unmanagedResourceDirectories += baseDirectory.value / "{directoryName}"
+Compile / unmanagegResourceDirectories / includeFilter := ".dll" | ".so"
 ```
 
 Specify the merging strategy in __build.sbt__ (a simple example).
