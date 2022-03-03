@@ -17,12 +17,12 @@ Setting up a virtual environment
 
     __Windows OS__:
     ```shell
-    python -m venv env
+    python -m venv .venv
     ```
 
     __Linux/UNIX__:
     ```shell
-    python3.9 -m venv env
+    python3.9 -m venv .venv
     ```
 
     __OR__
@@ -32,25 +32,25 @@ Setting up a virtual environment
     __Windows OS__:
     ```shell
     python -m pip install virtualenv
-    virtualenv --python="C:\Program Files\Python39\python.exe" env
+    virtualenv --python="C:\Program Files\Python39\python.exe" .venv
     ```
 
     __Linux/UNIX__:
     ```shell
     sudo pip install virtualenv
-    virtualenv --python=/opt/python-3.9/bin/python env
+    virtualenv --python=/opt/python-3.9/bin/python .venv
     ```
 
 3. Activate the virtual environment.
 
     __Windows OS__:
     ```shell
-    .\env\Scripts\activate
+    .\.venv\Scripts\activate
     ```
 
     __Linux/UNIX__:
     ```shell
-    source env/bin/activate
+    source .venv/bin/activate
     ```
 
 4. Do whatever you need (install requirements.txt, run scripts etc.)
@@ -71,7 +71,7 @@ Using a Python virtual environment with sudo on Linux
 
     Call your Python scripts using the full path of the Python executable e.g.
     ```shell
-    sudo ./env/bin/python3.9 my-script.py
+    sudo ./.venv/bin/python3.9 my-script.py
     ```
 
     In this case, you can skip the activation/deactivation steps.
