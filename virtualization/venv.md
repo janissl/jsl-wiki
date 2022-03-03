@@ -40,8 +40,10 @@ Setting up a virtual environment
     sudo pip install virtualenv
     virtualenv --python=/opt/python-3.9/bin/python .venv
     ```
+    
+    Hint: Add a Python version to the folder name if you want to have multiple virtual environments for different Python versions - .venv39, .venv310 etc.
 
-3. Activate the virtual environment.
+3. Activate the virtual environment (pay attention).
 
     __Windows OS__:
     ```shell
