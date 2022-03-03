@@ -4,7 +4,7 @@ Using a virtual environment for a particular project
 Why to use a virtual environment in Python?
 -------------------------------------------
 
-The main reason is to avoid a global mess with different versions of Python non-standard packages across multiple projects.
+The main reason is to avoid a global mess with different versions of Python non-standard packages across multiple projects or test your code under multiple versions of Python.
 
 In virtual environment you only install the necessary packages locally for a particular project while keeping your global Python installation intact.
 
