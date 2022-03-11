@@ -12,3 +12,12 @@ git remote get-url --all origin
 ```shell
 git remote set-url origin <new.git.url>
 ```
+
+### Rename a branch
+
+```shell
+git checkout <old_name>
+git branch -m <new_name>
+git push origin -u <new_name>
+got push origin --delete <old_name>
+```
