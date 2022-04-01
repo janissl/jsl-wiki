@@ -47,3 +47,16 @@ git checkout master_branch
 git cat-file -p 5e6af5c
 git revert -m 1 5e6af5c
 ```
+
+### Resolve conflict of feature branch with main branch before merge
+
+```shell
+git checkout feature_branch
+git pull origin main_branch
+
+# Correct the code and save the file(s).
+
+git add <filename>
+git commit -m '<message>'
+git push origin feature_branch
+```
