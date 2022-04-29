@@ -87,3 +87,8 @@ __Windows OS__:
 ```shell
 python -m pip freeze > unins && python -m pip uninstall -y -r unins && del unins
 ```
+
+__Linux/UNIX__:
+```shell
+pip uninstall -y -r <(pip freeze)
+```
