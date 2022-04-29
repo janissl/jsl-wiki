@@ -77,3 +77,13 @@ Using a Python virtual environment with sudo on Linux
     ```
 
     In this case, you can skip the activation/deactivation steps.
+    
+Resetting virtual environment
+-----------------------------
+
+If you need to remove all Python packages installed with pip, execute the following commands:
+
+__Windows OS__:
+```shell
+python -m pip freeze > unins && python -m pip uninstall -y -r unins && del unins
+```
