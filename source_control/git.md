@@ -60,3 +60,25 @@ git add <filename>
 git commit -m '<message>'
 git push origin feature_branch
 ```
+
+### Restore a local branch
+
+Remove uncommited changes:
+```shell
+git reset --hard
+```
+
+Return to a particular commit:
+```shell
+git reset --hard <commit_hash>
+```
+
+From a local backup:
+```shell
+git reset --hard <branch_backup>
+```
+
+From a remote branch:
+```shell
+git reset --hard origin/<branch_name> 
+```
