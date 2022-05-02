@@ -80,5 +80,6 @@ git reset --hard <branch_backup>
 
 From a remote branch:
 ```shell
+git fetch origin
 git reset --hard origin/<branch_name> 
 ```
