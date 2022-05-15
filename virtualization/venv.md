@@ -37,7 +37,7 @@ Setting up a virtual environment
 
     __Linux/UNIX__:
     ```shell
-    sudo pip install virtualenv
+    sudo pip3 install virtualenv
     virtualenv --python=/opt/python-3.9/bin/python .venv
     ```
     
