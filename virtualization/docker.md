@@ -70,6 +70,12 @@ docker rm ${container_id}
 docker rm $(docker ps -aq)
 ```
 
+#### Remove build cache
+
+```shell
+docker builder prune
+```
+
 #### Access docker container
 
 ```shell
