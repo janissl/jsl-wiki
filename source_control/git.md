@@ -57,7 +57,7 @@ git pull origin main_branch
 # Correct the code and save the file(s).
 
 git add <filename>
-git commit -m '<message>'
+git commit [-m '<message>']
 git push origin feature_branch
 ```
 
