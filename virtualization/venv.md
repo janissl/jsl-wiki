@@ -92,3 +92,20 @@ __Linux/UNIX__:
 ```shell
 pip uninstall -y -r <(pip freeze)
 ```
+
+Using Jupyter Notebooks in virtual environment
+----------------------------------------------
+
+To install __jupyterlab__ in a virtual environment, execute the follwing commands:
+
+```shell
+python -m pip install jupyterlab ipykernel
+python -m ipykernel install --user --name=.venv
+```
+__NOTE__: Substitute __.venv__ with the real name of the folder where you've set up your virtual environment, in case this name is different.
+
+When creating a new notebook, choose the appropriate kernel (in this case, '.venv').
+
+To view available kernels, use 'jupyter kernelspec list'.
+
+To remove a particular kernel from jupyterlab, use 'jupyter kernelspec uninstall <kernel_name>'.
