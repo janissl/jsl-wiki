@@ -61,6 +61,13 @@ git commit [-m '<message>']
 git push origin feature_branch
 ```
 
+### Restore missing files and folders
+```shell
+# NOTE: this will also restore modified files!
+
+git checkout .
+```
+
 ### Restore a local branch
 
 Remove uncommited changes:
