@@ -118,7 +118,7 @@ Generates program launch scripts _./target/pack/bin/{appName}_.
 
 Add the following line in the file _./project/plugins.sbt_ (check for the latest version on https://github.com/xerial/sbt-pack)
 ```sbt
-addSbtPlugin("org.xerial.sbt" % "sbt-pack" % "0.13")
+addSbtPlugin("org.xerial.sbt" % "sbt-pack" % "0.20")
 ```
 
 Enable the plugin in __build.sbt__ (in the same as with the assembly plugin - see above).
