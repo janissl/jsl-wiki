@@ -77,7 +77,7 @@ Outputs a JAR to *./target/scala_{scalaVersion}/{projectName}-assembly-{projectV
 
 Add the following line in the file _./project/plugins.sbt_ (check for the latest version on https://github.com/sbt/sbt-assembly).
 ```sbt
-addSbtPlugin("eed3si9n" % "sbt-assembly" % "0.15.0")
+addSbtPlugin("com.eed3si9n" % "sbt-assembly" % "1.2.0")
 ```
 
 Add _enablePlugins_ method in __build.sbt__.
