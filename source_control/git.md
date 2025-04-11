@@ -90,3 +90,8 @@ From a remote branch:
 git fetch origin
 git reset --hard origin/<branch_name> 
 ```
+
+### Check out a file from another branch
+```shell
+git checkout origin/<branch_name> -- path/to/the/desired/file
+```
