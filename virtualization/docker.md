@@ -8,6 +8,12 @@ Commands
 
 ```shell
 docker build -t ${repo_name} . --no-cache
+
+# in a multi-container project use docker compose instead
+docker compose [-f ${custom_name}.yml] up
+
+# or force image rebuild
+docker compose [-f ${custom_name}.yml] build --no-cache
 ```
 
 #### Save image to file
@@ -38,6 +44,9 @@ docker image rm ${image_id}
 
 ```shell
 docker run [-d] -p ${port}:${port} --name ${custom_name} ${repo_name}
+
+# in a multi-container project use docker compose instead
+docker compose [-f ${custom_name}.yml] up -d
 ```
 
 #### View running containers
@@ -50,12 +59,29 @@ docker ps
 
 ```shell
 docker stop ${container_id,custom_name}
+
+# in a multi-container project use docker compose instead
+docker compose [-f {custom_name}.yml] stop
+
+# or stop and tear down all containers for update or maintenance
+docker compose [-f {custom_name}.yml] down
+```
+
+#### Start stopped docker container
+```shell
+docker start ${container_id,custom_name}
+
+#  in a multi-container project use docker compose instead
+docker compose [-f {custom_name}.yml] start
 ```
 
 #### Restart a stopped container
 
 ```shell
 docker restart ${container_id}
+
+# in a multi-container project use docker compose instead
+docker compose [-f {custom_name}.yml] restart
 ```
 
 #### Remove a container
@@ -80,6 +106,9 @@ docker builder prune
 
 ```shell
 docker exec -it ${container_id} bash
+
+# in a multi-container project use docker compose instead
+docker compose [-f {custom_name}.yml] exec ${service} ${command} ${arguments}
 ```
 
 #### Pass input from a file to a docker container
