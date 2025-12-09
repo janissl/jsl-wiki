@@ -40,6 +40,11 @@ docker images
 docker image rm ${image_id}
 ```
 
+#### Remove dangling docker images
+```shell
+docker image prune
+```
+
 #### Run docker container
 
 ```shell
