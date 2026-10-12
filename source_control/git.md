@@ -107,7 +107,7 @@ git fetch origin
 git reset --hard origin/<branch_name> 
 ```
 
-### Revert the last **unpushed** commit
+### Undo the last <ins>unpushed</ins> commit
 ```shell
 git reset HEAD~1
 ```
