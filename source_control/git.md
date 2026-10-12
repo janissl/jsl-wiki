@@ -1,5 +1,10 @@
 git commands
 ============
+### Clone a remote repository
+```shell
+git clone <git.url>
+cd <project_name>
+```
 
 ### Check URI of a remote repository
 
@@ -11,6 +16,17 @@ git remote get-url --all origin
 
 ```shell
 git remote set-url origin <new.git.url>
+```
+
+### Change the upstream tracking to the new remote repository
+
+```shell
+git branch -u origin/master
+```
+
+### Push the content of the old remote repository to the new remote repository
+```shell
+git push -u origin master
 ```
 
 ### Rename a branch
