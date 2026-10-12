@@ -91,6 +91,11 @@ git fetch origin
 git reset --hard origin/<branch_name> 
 ```
 
+### Revert the last **unpushed** commit
+```shell
+git reset HEAD~1
+```
+
 ### Check out a file from another branch
 ```shell
 git checkout origin/<branch_name> -- path/to/the/desired/file
